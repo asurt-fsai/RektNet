@@ -6,6 +6,7 @@ import numpy as np
 
 
 class CrossRatioLoss(nn.Module):
+    
     def __init__(self, loss_type, include_geo, geo_loss_gamma_horz, geo_loss_gamma_vert):
         super(CrossRatioLoss, self).__init__()
         self.loss_type = loss_type
@@ -29,7 +30,6 @@ class CrossRatioLoss(nn.Module):
             location_loss = l1_loss.sum(2).sum(1).mean()
         else:
             print("Did not recognize loss function selection!")
-            sys.exit(1)
 
         if self.include_geo:
             # Loss on co-linearity of points along side of cone

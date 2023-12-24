@@ -7,7 +7,6 @@ import os
 import shutil
 import cv2
 import tempfile
-from google.cloud import storage
 from tqdm import tqdm
 import statistics
 import torch
